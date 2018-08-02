@@ -1,0 +1,19 @@
+{
+  "name": "socialcopsnodetask",
+  "version": "1.0.0",
+  "description": "Node task by socialcops",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singhalok641/SocialCopsNodeTask.git"
+  },
+  "author": "Alok Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/singhalok641/SocialCopsNodeTask/issues"
+  },
+  "homepage": "https://github.com/singhalok641/SocialCopsNodeTask#readme"
+}
