@@ -4,7 +4,7 @@
   "description": "Node task by socialcops",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha server/**/*.test.js",
     "start": "nodemon server"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "eslint": "^5.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
   }
 }

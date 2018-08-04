@@ -29,7 +29,7 @@ export function authenticate() {
       return common.sendResponse(res, 403, null, null, strings.error.MISSING_TOKEN);
  
     //  Check if the token is valid and decode and add details to req.user
-    if(validateToken(req)){
+    if(!validateToken(req)){
       logger.debug('auth token is not verified.');
       return common.sendResponse(res, 401, null, null, strings.error.JWT_FAILURE);
     }
