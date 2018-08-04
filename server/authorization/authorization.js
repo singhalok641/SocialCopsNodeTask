@@ -3,7 +3,7 @@
 import jwt from 'jsonwebtoken';
 import config from '../config';
 import strings from '../misc/strings.js';
-import common from '../misc/common.js';
+import * as common from '../misc/common.js';
 import logger from '../misc/logger.js';
  
 /**
@@ -29,14 +29,11 @@ export function authenticate() {
       return common.sendResponse(res, 403, null, null, strings.error.MISSING_TOKEN);
  
     //  Check if the token is valid and decode and add details to req.user
-    if(!validateToken(req)){
+    if(validateToken(req)){
       logger.debug('auth token is not verified.');
-      return common.sendResponse(res, 403, null, null, strings.error.JWT_FAILURE);
+      return common.sendResponse(res, 401, null, null, strings.error.JWT_FAILURE);
     }
-    //  Check if the token is valid and decode and add details to req.user
-    if(req.user.type !== strings.SC_TYPE)
-      return common.sendResponse(res, 403, null, null, strings.error.AUTH_ERROR);
- 
+
     next();
   };
 }
@@ -46,6 +43,15 @@ export function authenticate() {
  *  @return Boolean.
  */
 function validateToken(req) {
+  /*const bearerHeader = req.headers.authorization;
+  // Check if bearer is undefined
+  if (typeof bearerHeader !== 'undefined') {
+    // Split at the space
+    const bearer = bearerHeader.split(' ');
+    // Get the value from the array
+    const bearerToken = bearer[1];
+    logger.info(bearerToken);
+  } */
   try {
     var decodedData = jwt.verify(req.headers.authorization, config.JWT);
     req.user = decodedData;
