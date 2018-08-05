@@ -10,16 +10,16 @@ import * as common from '../misc/common.js';
  */
 export function verifyUserLogin(req, res) {
  
-  // Checks necessary fields - username and password
-  if(!(req.body.username && req.body.password))
-    return common.sendResponse(res, 400, null, null, strings.error.MISSING_FIELDS);
+	// Checks necessary fields - username and password
+	if(!(req.body.username && req.body.password))
+		return common.sendResponse(res, 400, null, null, strings.error.MISSING_FIELDS);
  
-  let token = authorizationService.signToken({
-    type : strings.SC_TYPE,
-    user : req.body.username
-  });
+	let token = authorizationService.signToken({
+		type : strings.SC_TYPE,
+		user : req.body.username
+	});
  
-  return common.sendResponse(res, 200, null, {
-    token
-  });
+	return common.sendResponse(res, 200, null, {
+		token
+	});
 }

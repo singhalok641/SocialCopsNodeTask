@@ -17,9 +17,9 @@ require('./route').default(app);
  
 // Start server 
 function startServer() { 
-  server.listen(config.PORT, config.HOST, function() { 
-    logger.log('info', 'server started on %d, in %s mode...', config.PORT, config.ENV); 
-  }); 
+	server.listen(config.PORT, config.HOST, function() { 
+		logger.log('info', 'server started on %d, in %s mode...', config.PORT, config.ENV); 
+	}); 
 } 
  
 setImmediate(startServer); 

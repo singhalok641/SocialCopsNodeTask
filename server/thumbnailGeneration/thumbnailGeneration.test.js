@@ -73,7 +73,7 @@ describe('Thumbnail APIs:', function() {
 				.post('/thumbnailGeneration/generate')
 				.set('Authorization', loggedInUser.token)
 				.send({
-					url : 'http://www.socialcops.com'
+					'url' : 'http://www.socialcops.com'
 				})
 				.expect(400)
 				.expect('Content-Type', /json/)
@@ -100,7 +100,7 @@ describe('Thumbnail APIs:', function() {
 				.post('/thumbnailGeneration/generate')
 				.set('Authorization', loggedInUser.token)
 				.send({
-					'url' : 'abcudbcaubcuabdcb'
+					'url' : 'hey'
 				})
 				.expect(500)
 				.expect('Content-Type', /json/)

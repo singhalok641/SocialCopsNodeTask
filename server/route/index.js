@@ -7,5 +7,5 @@ export default function(app) {
 
 	app.use('/login', require('../authorization').default);
 	app.use('/jsonpatch', require('../jsonPatching'));
-	app.use('/thumbnailgeneration', require('../thumbnailGeneration'))
+	app.use('/thumbnailgeneration', require('../thumbnailGeneration'));
 }

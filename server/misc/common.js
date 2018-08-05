@@ -1,6 +1,5 @@
 'use strict';
 
-import logger from './logger.js';
 /**
  *  Send response with given status code and payload.
  *  @return false.

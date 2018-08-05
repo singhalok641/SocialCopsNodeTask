@@ -13,7 +13,7 @@ import logger from '../misc/logger.js';
  */
 export function signToken(payloadData) {
  
-  return jwt.sign(payloadData, config.JWT_SECRET, { expiresIn: 5*60*60 });
+	return jwt.sign(payloadData, config.JWT_SECRET, { expiresIn: 5*60*60 });
 }
  
 /**
@@ -22,20 +22,20 @@ export function signToken(payloadData) {
  */
 export function authenticate() {
   
-  return (req, res, next) => {
+	return (req, res, next) => {
  
-    //  Check token in request header
-    if(!req.headers.authorization)
-      return common.sendResponse(res, 403, null, null, strings.error.MISSING_TOKEN);
+		//  Check token in request header
+		if(!req.headers.authorization)
+			return common.sendResponse(res, 403, null, null, strings.error.MISSING_TOKEN);
  
-    //  Check if the token is valid and decode and add details to req.user
-    if(!validateToken(req)){
-      logger.debug('auth token is not verified.');
-      return common.sendResponse(res, 401, null, null, strings.error.JWT_FAILURE);
-    }
+		//  Check if the token is valid and decode and add details to req.user
+		if(!validateToken(req)){
+			logger.debug('auth token is not verified.');
+			return common.sendResponse(res, 401, null, null, strings.error.JWT_FAILURE);
+		}
 
-    next();
-  };
+		next();
+	};
 }
  
 /**
@@ -43,7 +43,7 @@ export function authenticate() {
  *  @return Boolean.
  */
 function validateToken(req) {
-  /*const bearerHeader = req.headers.authorization;
+	/*const bearerHeader = req.headers.authorization;
   // Check if bearer is undefined
   if (typeof bearerHeader !== 'undefined') {
     // Split at the space
@@ -52,11 +52,11 @@ function validateToken(req) {
     const bearerToken = bearer[1];
     logger.info(bearerToken);
   } */
-  try {
-    var decodedData = jwt.verify(req.headers.authorization, config.JWT_SECRET);
-    req.user = decodedData;
-    return true;
-  } catch(err) {
-    return false;
-  }
+	try {
+		var decodedData = jwt.verify(req.headers.authorization, config.JWT_SECRET);
+		req.user = decodedData;
+		return true;
+	} catch(err) {
+		return false;
+	}
 }

@@ -10,12 +10,9 @@ export function applyJSONPatch(req, res){
 		return common.sendResponse(res, 400, null, null, strings.error.MISSING_FIELDS);
 	}
 	let patchedDoc;
-	
-	logger.debug(req.body.myDoc);
 
 	try{
-		// Will throw error if thePatch is not valid
-
+		// Will throw error if thePatch object is not valid
 		patchedDoc = jsonpatch.apply_patch(req.body.myDoc, req.body.thePatch);
 	} catch (err) {
 		logger.error(err);

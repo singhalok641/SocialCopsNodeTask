@@ -163,12 +163,12 @@ describe('Patch APIs:', function() {
 				.patch('/jsonpatch/applyPatch')
 				.set('Authorization', loggedInUser.token)
 				.send({
-					'docObj' : {
+					'myDoc' : {
 						'baz': 'qux',
 						'foo': 'bar'
 					},
-					'patchObj' : [
-						{ 'op': 'replakdnckandkcnkandcace', 'path': '/baz', 'value': 'boo' }
+					'thePatch' : [
+						{ 'op': 'replakdn', 'path': '/baz', 'value': 'boo' }
 					]
 				})
 				.expect(400)
@@ -185,7 +185,7 @@ describe('Patch APIs:', function() {
 		// response should something went wrong message.
 		it('Should response with something went wrong message.', function() {
 			assert.isDefined(result.error, 'error message');
-			//expect(result.error).to.equal(strings.error.SOMETHING);
+			expect(result.error).to.equal(strings.error.SOMETHING);
 		});
 	});
 });
