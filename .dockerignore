@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+.DS_STORE
+*.log
+.nyc_output
+coverage
+logs
+public/thumbnails
+docs
