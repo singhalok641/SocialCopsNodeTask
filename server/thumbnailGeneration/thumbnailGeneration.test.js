@@ -6,7 +6,6 @@ let app = require('../');
 let config = require('../config');
 let request = require('supertest');
 let assert = require('chai').assert;
-let expect = require('chai').expect;
 /**
  *	Write all the possible test cases related to patch module inside below describe block.
  */
