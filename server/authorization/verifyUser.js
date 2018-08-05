@@ -5,8 +5,8 @@ import * as strings from '../misc/strings.js';
 import * as common from '../misc/common.js';
  
 /**
- *Mock authentication service - Verifies any user log in with a username and a password field
-  @return token.
+ *Mock authentication service - Verifies any user login with a username and a password field
+  @return JWT token.
  */
 export function verifyUserLogin(req, res) {
  

@@ -1,5 +1,7 @@
 'use strict';
- 
+/**
+ *  @module JWT Authorization
+ */ 
 import jwt from 'jsonwebtoken';
 import config from '../config';
 import strings from '../misc/strings.js';

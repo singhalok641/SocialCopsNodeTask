@@ -1,6 +1,6 @@
 'use strict';
 /**
- *	Test cases related to thumbnail.
+ *	Test cases related to thumbnail generation module.
  */
 let app = require('../');
 let config = require('../config');

@@ -1,4 +1,7 @@
 'use strict';
+/**
+ *	@module Miscelleneous
+ */
  
 // Strings used in the app
 module.exports = {

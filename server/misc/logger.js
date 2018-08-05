@@ -1,8 +1,11 @@
 'use strict';
 /**
- *  @module Utils
+ *  @module Miscelleneous
  */
 
+/**
+ *  Winston logger
+ */
 import winston from 'winston';
 
 const logger = winston.createLogger({

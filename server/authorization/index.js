@@ -4,7 +4,7 @@ let express = require('express');
 let  router = express.Router();
  
 /**
- *  All Authentication routes
+ *	JWT Authentication route
  */
 router.post('/', require('./verifyUser.js').verifyUserLogin);
  

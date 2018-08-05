@@ -1,5 +1,7 @@
 'use strict';
-
+/**
+ *  @module Miscelleneous
+ */
 /**
  *  Send response with given status code and payload.
  *  @return false.
@@ -13,6 +15,10 @@ export function sendResponse(res, code, message, data, error) {
 	return false;
 }
 
+/**
+ *  Check required keys for a particular api request.
+ *  @return false.
+ */
 export function checkRequiredKeys(req, keyArr){
 	for(let i=0; i<keyArr.length; i++) {
 		//logger.info(req.body[keyArr[i]]);

@@ -1,6 +1,6 @@
 'use strict';
 /**
- *	Test cases related to Patch module.
+ *	Test cases related to JSON Patch module.
  */
 
 let app = require('../');

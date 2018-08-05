@@ -7,7 +7,8 @@
     "test": "mocha server/**/*.test.js --exit",
     "start": "nodemon server",
     "lint": "eslint server/**/**/*.js server/**/*.js",
-    "test-cover": "nyc --reporter=lcov --reporter=text-lcov npm test"
+    "test-cover": "nyc --reporter=lcov --reporter=text-lcov npm test",
+    "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "eslint": "^5.2.0",
+    "minami": "^1.2.3",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",
     "supertest": "^3.1.0"

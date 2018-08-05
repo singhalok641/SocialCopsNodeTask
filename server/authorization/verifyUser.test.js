@@ -1,6 +1,6 @@
 'use strict';
 /**
- *	Test cases related to Patch module.
+ *	Test cases related to JWT token generation module.
  */
 
 let app = require('../');
