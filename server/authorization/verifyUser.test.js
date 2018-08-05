@@ -40,7 +40,7 @@ describe('User login:', function() {
 	});
 
 	// User login attempt without required fields.
-	describe('User login without correct fields', function(){
+	describe('User login with incorrect inputs', function(){
 		let loggedInUser;
 		beforeEach(function(done) {
 			request(app)

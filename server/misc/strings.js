@@ -15,7 +15,8 @@ module.exports = {
     MISSING_TOKEN : 'Authorization token is missing.',
     MISSING_FIELDS : 'Missing fields.',
     USER_UNKNOWN : 'Unknown user.',
-    WRONG_PASSWORD : 'Wrong password.'
+    WRONG_PASSWORD : 'Wrong password.',
+    WRONG_IMG_URL : 'Cannot find an image with the given url.'
   },
   message : {
     PASSWORD_CHANGED : 'Password changed successfully.',

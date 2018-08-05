@@ -53,7 +53,7 @@ function validateToken(req) {
     logger.info(bearerToken);
   } */
   try {
-    var decodedData = jwt.verify(req.headers.authorization, config.JWT);
+    var decodedData = jwt.verify(req.headers.authorization, config.JWT_SECRET);
     req.user = decodedData;
     return true;
   } catch(err) {
